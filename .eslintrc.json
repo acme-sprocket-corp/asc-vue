@@ -1,0 +1,6 @@
+{
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "extends": ["eslint:recommended", "@vue/eslint-config-typescript", "plugin:vue/vue3-recommended"]
+}
