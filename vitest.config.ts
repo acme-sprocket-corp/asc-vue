@@ -13,6 +13,23 @@ export default mergeConfig(
       transformMode: {
         web: [/\.[jt]sx$/],
       },
+      coverage: {
+        provider: "istanbul",
+        enabled: true,
+        branches: 100,
+        statements: 90,
+        functions: 90,
+        lines: 90,
+        all: true,
+        exclude: [
+          "data/**",
+          "main.ts",
+          "router/**",
+          "**/**{Container, container}.vue",
+          "**/{Default, default}**.ts",
+        ],
+      },
+      globals: true,
     },
   })
 );
