@@ -35,6 +35,8 @@ export default mergeConfig(
           "vite.config.ts",
           "vitest.config.ts",
           "src/App.vue",
+          "cypress.config.ts",
+          "cypress",
         ],
       },
       globals: true,

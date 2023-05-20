@@ -21,6 +21,7 @@
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended",
     "plugin:storybook/recommended",
+    "plugin:cypress/recommended",
     "plugin:prettier/recommended"
   ],
   "rules": {
