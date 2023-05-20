@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import TableElement from "./TableElement.vue";
+import StoryTableElement from "./StoryTableElement.vue";
 
 const meta: Meta<typeof TableElement> = {
-  component: TableElement,
+  component: StoryTableElement,
   tags: ["autodocs"],
 };
 

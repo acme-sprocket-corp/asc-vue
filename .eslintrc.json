@@ -46,6 +46,22 @@
           "\\.cy\\.*"
         ]
       }
+    ],
+    "vuejs-accessibility/label-has-for": [
+      2,
+      {
+        "required": {
+          "every": ["id"]
+        }
+      }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "vitest/require-hook": 0
+      }
+    }
+  ]
 }
