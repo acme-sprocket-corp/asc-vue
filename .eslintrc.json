@@ -47,6 +47,10 @@
         ]
       }
     ],
+    "unicorn/consistent-function-scoping": [
+      2,
+      { "checkArrowFunctions": false }
+    ],
     "vuejs-accessibility/label-has-for": [
       2,
       {
