@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/vue";
 import HomeView from "./HomeView.vue";
 
-describe("HomeView", () => {
+describe("homeView", () => {
   it("renders", () => {
     render(HomeView);
 
