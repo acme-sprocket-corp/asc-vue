@@ -8,6 +8,7 @@ export default mergeConfig(
   defineConfig({
     test: {
       environment: "jsdom",
+      setupFiles: "./src/setupTests.ts",
       exclude: [...configDefaults.exclude, "e2e/*"],
       root: fileURLToPath(new URL("./", import.meta.url)),
       transformMode: {
@@ -22,11 +23,12 @@ export default mergeConfig(
         lines: 90,
         all: true,
         exclude: [
-          "data/**",
-          "main.ts",
-          "router/**",
+          "src/data/**",
+          "src/main.ts",
+          "src/router/**",
           "**/**{Container, container}.vue",
           "**/{Default, default}**.ts",
+          "src/coverage/**",
         ],
       },
       globals: true,
