@@ -38,6 +38,7 @@ export default mergeConfig(
           "cypress.config.ts",
           "cypress",
           "**/{story,Story}**.*",
+          "**/index.ts",
         ],
       },
       globals: true,

@@ -10,9 +10,15 @@ export default meta;
 
 export const Default: StoryObj<typeof PaginatedTable> = {
   args: {
-    headers: ["First", "Second", "Third"],
-    pageSize: 10,
-    currentPage: 2,
     entityCount: 30,
+    currentPage: 2,
+    pageSize: 10,
+    pageChange: () => {
+      return;
+    },
+    pageSizeChange: () => {
+      return;
+    },
+    headers: ["First", "Second", "Third"],
   },
 };
