@@ -5,6 +5,9 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-a11y",
+    "@storybook/addon-jest",
+    "@storybook/addon-storysource",
   ],
   framework: {
     name: "@storybook/vue3-vite",

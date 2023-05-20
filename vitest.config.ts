@@ -15,7 +15,6 @@ export default mergeConfig(
         web: [/\.[jt]sx$/],
       },
       coverage: {
-        provider: "istanbul",
         enabled: true,
         branches: 100,
         statements: 90,
@@ -29,9 +28,21 @@ export default mergeConfig(
           "**/**{Container, container}.vue",
           "**/{Default, default}**.ts",
           "src/coverage/**",
+          ".storybook/**",
+          "**/**.stories.ts",
+          "src/shims-vue.d.ts",
+          "env.d.ts",
+          "vite.config.ts",
+          "vitest.config.ts",
+          "src/App.vue",
         ],
       },
       globals: true,
+    },
+    resolve: {
+      alias: {
+        "@storybook/jest": "vitest",
+      },
     },
   })
 );
