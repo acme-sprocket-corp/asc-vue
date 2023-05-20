@@ -30,6 +30,7 @@ export default mergeConfig(
           "src/coverage/**",
           ".storybook/**",
           "**/**.stories.ts",
+          "**/**.test.ts",
           "src/shims-vue.d.ts",
           "env.d.ts",
           "vite.config.ts",
