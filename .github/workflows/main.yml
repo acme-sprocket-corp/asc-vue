@@ -28,6 +28,9 @@ jobs:
       - name: Lint Application
         run: npm run lint
 
+      - name: Create Coverage Folder
+        run: mkdir coverage
+
       - name: Run Unit Tests
         run: npm run test:unit
 
