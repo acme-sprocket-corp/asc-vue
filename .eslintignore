@@ -5,3 +5,4 @@ vite.config.ts
 src/main.ts
 coverage
 src/setupTests.ts
+cypress.config.ts

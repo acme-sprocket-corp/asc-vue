@@ -7,7 +7,8 @@
     "project": [
       "./tsconfig.json",
       "./tsconfig.vitest.json",
-      "./tsconfig.app.json"
+      "./tsconfig.app.json",
+      "./cypress/tsconfig.json"
     ]
   },
   "extends": [
@@ -62,9 +63,23 @@
   },
   "overrides": [
     {
-      "files": ["*.vue"],
+      "files": ["*.vue", "./cypress/**"],
       "rules": {
         "vitest/require-hook": 0
+      }
+    },
+    {
+      "files": ["*.cy.ts"],
+      "rules": {
+        "testing-library/await-async-query": 0,
+        "testing-library/prefer-screen-queries": 0
+      }
+    },
+    {
+      "files": ["./cypress/support/**"],
+      "rules": {
+        "unicorn/filename-case": [2, { "case": "camelCase" }],
+        "unicorn/prevent-abbreviations": 0
       }
     }
   ]
