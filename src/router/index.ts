@@ -11,7 +11,7 @@ const router = createRouter({
       name: "myBffJill",
       component: HomeView,
       props: (route): { id: number } => ({
-        id: Number.parseInt("1"),
+        id: Number.parseInt(route.path),
       }),
     },
   ],
