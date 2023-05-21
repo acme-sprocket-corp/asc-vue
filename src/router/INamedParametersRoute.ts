@@ -1,13 +1,14 @@
 import type { INamedRoute } from "./INamedRoute";
+import type { RouteParamsRaw } from "vue-router";
 
-export interface INamedParametersRoute<T> extends INamedRoute {
-  params: T;
+export interface INamedParametersRoute extends INamedRoute {
+  params: RouteParamsRaw;
 }
 
-export function namedParametersRoute<T>(
+export function namedParametersRoute(
   name: string,
-  parameters: T
-): INamedParametersRoute<T> {
+  parameters: RouteParamsRaw
+): INamedParametersRoute {
   return {
     name,
     params: parameters,

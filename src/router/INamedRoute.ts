@@ -1,4 +1,6 @@
-export interface INamedRoute {
+import { type RouteLocationNamedRaw } from "vue-router";
+
+export interface INamedRoute extends RouteLocationNamedRaw {
   name: string;
 }
 
