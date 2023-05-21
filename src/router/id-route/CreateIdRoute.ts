@@ -7,6 +7,10 @@ export default function createIdRoute(
   name: string,
   component: Component
 ): RouteRecordRaw {
+  if (!basePath.startsWith("/") || !basePath.endsWith("/")) {
+    throw new Error("the base path must stand and end with a '/'");
+  }
+
   return {
     path: `${basePath}:id`,
     name,
