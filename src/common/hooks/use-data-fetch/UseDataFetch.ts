@@ -3,14 +3,16 @@ import useState from "../use-state/UseState";
 import type { AxiosResponse } from "axios";
 import { useRouter } from "vue-router";
 import { StatusCodes } from "./StatusCodes";
+import { namedRoute } from "@/router/INamedRoute";
+import { ValueDefaults } from "@/common";
 
 export default function useDataFetch<T>(
   defaultState: T,
   callback: () => Promise<AxiosResponse<T>>
 ): [state: Ref<T>, error: Ref<string>, loading: Ref<boolean>] {
   const [state, setState] = useState<T>(defaultState);
-  const [error, setError] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>(ValueDefaults.String);
+  const [loading, setLoading] = useState<boolean>(ValueDefaults.Boolean);
   const router = useRouter();
 
   onMounted(() => {
@@ -28,15 +30,15 @@ export default function useDataFetch<T>(
               return setError(response.statusText);
             }
             default: {
-              return setError("");
+              return setError(ValueDefaults.String);
             }
           }
         })
         .catch((error: string) => setError(error))
         .finally(() => setLoading(false));
 
-      if (error.value !== "") {
-        await router.push({ name: "error" });
+      if (error.value !== ValueDefaults.String) {
+        await router.push(namedRoute("error"));
       }
 
       return result;

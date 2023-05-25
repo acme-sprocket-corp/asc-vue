@@ -2,14 +2,12 @@ import type { RouteRecordRaw } from "vue-router";
 import HomeView from "./HomeView.vue";
 import { namedRoute } from "@/router/INamedRoute";
 
-const name = "home";
+const homePageRouteName = "home";
 
-export const homeRoute = namedRoute(name);
+export const homeRoute = namedRoute(homePageRouteName);
 
-export default function homeRoutes(): RouteRecordRaw {
-  return {
-    path: "/",
-    name,
-    component: HomeView,
-  };
-}
+export const homeRoutes: RouteRecordRaw = {
+  path: "/",
+  name: homePageRouteName,
+  component: HomeView,
+};

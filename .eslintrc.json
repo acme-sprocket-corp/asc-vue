@@ -24,10 +24,12 @@
     "plugin:vuejs-accessibility/recommended",
     "plugin:compat/recommended",
     "plugin:vitest/all",
+    "plugin:jest-extended/all",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended",
     "plugin:storybook/recommended",
     "plugin:cypress/recommended",
+    "plugin:jest-formatting/strict",
     "plugin:prettier/recommended"
   ],
   "rules": {

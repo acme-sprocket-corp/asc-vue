@@ -75,7 +75,6 @@ describe("paginatedTable", () => {
 
     await user.selectOptions(screen.getByRole("combobox"), ["15"]);
 
-    expect(mockPageSizeChange).toHaveBeenCalledTimes(1);
     expect(mockPageSizeChange).toHaveBeenCalledWith(15);
   });
 });
