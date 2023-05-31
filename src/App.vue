@@ -21,7 +21,7 @@ import { logInAction, logOutAction } from "./stores/actions";
 const store = useApplicationStore();
 
 const handleLogIn = (): void => {
-  store.dispatcher(logInAction("mike"));
+  store.dispatcher(logInAction("mike", ""));
 };
 
 const handleLogOut = (): void => {

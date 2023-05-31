@@ -1,9 +1,13 @@
+import { ValueDefaults } from "@/common";
+
 export interface ApplicationState {
   user: string;
+  accessToken: string;
   isLoggedIn: boolean;
 }
 
 export const defaultApplicationState: ApplicationState = {
-  user: "",
-  isLoggedIn: false,
+  user: ValueDefaults.String,
+  accessToken: ValueDefaults.String,
+  isLoggedIn: ValueDefaults.Boolean,
 };

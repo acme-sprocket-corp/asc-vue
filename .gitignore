@@ -17,6 +17,8 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
+/swagger
+
 # Editor directories and files
 .idea
 *.suo

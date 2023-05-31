@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-import { TableElement } from "@/common";
+import { TableElement, ValueDefaults } from "@/common";
 import type { TableElementProperties } from "../table/TableElement.vue";
 import { computed } from "vue";
 
@@ -74,7 +74,7 @@ const pageIsActive = (pageIndex: number): string => {
   if (pageIndex === properties.currentPage) {
     return "active";
   }
-  return "";
+  return ValueDefaults.String;
 };
 
 const handlePageSizeChange = (event: Event): void => {
