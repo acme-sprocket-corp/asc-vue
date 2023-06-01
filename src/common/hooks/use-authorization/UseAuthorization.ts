@@ -20,7 +20,7 @@ export default function useAuthorization(): IUseAuthorization {
   const router = useRouter();
   const store = useApplicationStore();
   const localStorage = useLocalStorage();
-  const [authError, setAuthError] = useState<string>(ValueDefaults.String);
+  const [authError] = useState<string>(ValueDefaults.String);
 
   const logIn = async (
     userName: string,
