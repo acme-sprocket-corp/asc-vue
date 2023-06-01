@@ -1,4 +1,4 @@
-import { ValueDefaults } from "@/common";
+import { ValueDefaults } from "@/common/utilities";
 import type IUseLocalStorage from "./IUseLocalStorage";
 
 export default function useLocalStorage(): IUseLocalStorage {

@@ -1,18 +1,29 @@
 <template>
   <header>
-    <nav class="d-flex justify-content-end">
-      <p v-if="store.state.isLoggedIn">Hello {{ store.state.user }}</p>
-      <button
-        v-if="!store.state.isLoggedIn"
-        class="btn btn-primary"
-        @click="handleLogIn"
-      >
-        Log In
-      </button>
-      <button v-else class="btn btn-primary" @click="handleLogOut">
-        Log Out
-      </button>
-    </nav>
+    <ContainerElement>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <RouterLink class="navbar-brand" :to="homeRoute"
+            >Acme Sprocket Co.</RouterLink
+          >
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav"></ul>
+          </div>
+          <div v-if="store.state.isLoggedIn">
+            <p>Hello {{ store.state.user }}</p>
+            <button class="btn btn-primary" @click="handleLogOut">
+              Log Out
+            </button>
+          </div>
+          <div v-else class="d-flex gap-2">
+            <button class="btn btn-primary" @click="handleLogIn">Log In</button>
+            <button class="btn btn-outline-info" @click="handleRegister">
+              Register
+            </button>
+          </div>
+        </div>
+      </nav>
+    </ContainerElement>
   </header>
   <main>
     <RouterView />
@@ -22,17 +33,24 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import { homeRoute } from "./features/home/Home.routes";
+import { ContainerElement } from "./common/components";
+import { useAuthorization } from "./common/hooks";
 import { useApplicationStore } from "./stores/UseApplicationStore";
-import { logOutAction } from "./stores/actions";
 
 const store = useApplicationStore();
+const authorization = useAuthorization();
 const router = useRouter();
 
 const handleLogIn = (): void => {
   void router.push({ name: "logIn" });
 };
 
+const handleRegister = (): void => {
+  void router.push({ name: "register" });
+};
+
 const handleLogOut = (): void => {
-  store.dispatcher(logOutAction());
+  void authorization.logOut();
 };
 </script>

@@ -1,4 +1,4 @@
-import { PaginatedTable } from "@/common";
+import PaginatedTable from "./PaginatedTable.vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 const meta: Meta<typeof PaginatedTable> = {

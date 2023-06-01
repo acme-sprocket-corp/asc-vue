@@ -4,7 +4,7 @@ import type { AxiosResponse } from "axios";
 import { useRouter } from "vue-router";
 import { StatusCodes } from "./StatusCodes";
 import { namedRoute } from "@/router/INamedRoute";
-import { ValueDefaults } from "@/common";
+import { ValueDefaults } from "@/common/utilities";
 
 export default function useDataFetch<T>(
   defaultState: T,

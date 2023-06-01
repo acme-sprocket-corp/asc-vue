@@ -1,4 +1,4 @@
-import { ValueDefaults } from "@/common";
+import { ValueDefaults } from "@/common/utilities";
 
 export interface ApplicationState {
   user: string;

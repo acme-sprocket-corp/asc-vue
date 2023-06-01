@@ -40,6 +40,21 @@ export interface LogInResponse {
   refreshToken: string;
 }
 
+export interface LogOutRequest {
+  /** @minLength 1 */
+  userName: string;
+}
+
+export interface ProblemDetails {
+  type?: string | null;
+  title?: string | null;
+  /** @format int32 */
+  status?: number | null;
+  detail?: string | null;
+  instance?: string | null;
+  [key: string]: any;
+}
+
 import axios, {
   type AxiosInstance,
   type AxiosRequestConfig,
@@ -255,6 +270,24 @@ export class Api<
         secure: true,
         type: ContentType.Json,
         format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Authentication
+     * @name LogOut
+     * @request POST:/api/Authentication/LogOut
+     * @secure
+     */
+    logOut: (data: LogOutRequest, params: RequestParams = {}) =>
+      this.request<void, string[] | ProblemDetails>({
+        path: `/api/Authentication/LogOut`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
         ...params,
       }),
   };

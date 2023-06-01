@@ -1,18 +1,20 @@
-import { useRouter, type NavigationFailure } from "vue-router";
-import type IUseAuthorization from "./IUseAuthorization";
-import { useApplicationStore } from "@/stores/UseApplicationStore";
-import useLocalStorage from "../use-local-storage/UseLocalStorage";
-import type { LogInRequest } from "@/data/Api";
+import { useRouter } from "vue-router";
+import type { LogInRequest, LogOutRequest } from "@/data/Api";
 import apiClient from "@/data/ApiClient";
 import { logInAction, logOutAction } from "@/stores/actions";
 import { homeRoute } from "@/features/home/Home.routes";
 import { errorRoute } from "@/common/components/error/ErrorPage.routes";
-import { StatusCodes } from "../use-data-fetch/StatusCodes";
 import jwtDecode from "jwt-decode";
 import type AccessTokenPayload from "@/data/AccessTokenPayload";
-import useState from "../use-state/UseState";
-import { ValueDefaults } from "@/common";
+import { ValueDefaults } from "@/common/utilities";
 import type { AuthorizationReturn } from "./IUseAuthorization";
+import { useApplicationStore } from "@/stores/UseApplicationStore";
+import {
+  useLocalStorage,
+  useState,
+  StatusCodes,
+  type IUseAuthorization,
+} from "@/common/hooks";
 
 export default function useAuthorization(): IUseAuthorization {
   const router = useRouter();
@@ -29,7 +31,7 @@ export default function useAuthorization(): IUseAuthorization {
     return apiClient()
       .api.logIn(request)
       .then((response) => {
-        if (response.status === (StatusCodes.Success as number)) {
+        if (response.status === StatusCodes.Success.valueOf()) {
           const payload = jwtDecode<AccessTokenPayload>(
             response.data.accessToken
           );
@@ -51,11 +53,17 @@ export default function useAuthorization(): IUseAuthorization {
   };
 
   const logOut = async (): Promise<AuthorizationReturn> => {
-    localStorage.deleteRefreshToken();
+    const request: LogOutRequest = { userName: store.state.user };
 
-    store.dispatcher(logOutAction());
+    return apiClient()
+      .api.logOut(request)
+      .then(() => {
+        localStorage.deleteRefreshToken();
 
-    return router.push(homeRoute);
+        store.dispatcher(logOutAction());
+
+        return router.push(homeRoute);
+      });
   };
 
   return { authError, logIn, logOut };
