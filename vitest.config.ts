@@ -26,7 +26,7 @@ export default mergeConfig(
           "**/**{Container,container}.vue",
           "**/{Default,default}**.*",
           "**/**.stories.ts",
-          "**/{Story}**.*",
+          "**/{Story, story}**.*",
           "**/**.test.ts",
           "**/**{TestBed}.*",
           "**/**.routes.*",
