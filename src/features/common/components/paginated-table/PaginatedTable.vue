@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-import { ValueDefaults } from "@/common/utilities";
+import { ValueDefaults } from "@/features/common/utilities";
 import { TableElement } from "../index";
 import type { TableElementProperties } from "../table/TableElement.vue";
 import { computed } from "vue";

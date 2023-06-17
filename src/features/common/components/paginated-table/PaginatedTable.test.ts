@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/vue";
 import type { PaginatedTableProperties } from "./PaginatedTable.vue";
-import renderOptionsWrapper from "@/common/tests/RenderOptionsWrapper";
+import renderOptionsWrapper from "@/infrastructure/tests/RenderOptionsWrapper";
 import { vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import PaginatedTable from "./PaginatedTable.vue";

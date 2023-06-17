@@ -34,9 +34,9 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { homeRoute } from "./features/home/Home.routes";
-import { ContainerElement } from "./common/components";
-import { useAuthorization } from "./common/hooks";
+import { useAuthorization } from "./infrastructure/hooks";
 import { useApplicationStore } from "./stores/UseApplicationStore";
+import { ContainerElement } from "./features/common/components";
 
 const store = useApplicationStore();
 const authorization = useAuthorization();

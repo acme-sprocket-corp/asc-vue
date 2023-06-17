@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import useState from "@/common/hooks/use-state/UseState";
+import { useState } from "@/features/common/hooks";
 import { eventToString, eventToNumber, eventToDate } from "./EventHelpers";
 import { computed } from "vue";
 
