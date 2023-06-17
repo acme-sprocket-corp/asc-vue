@@ -3,7 +3,7 @@ import {
   defaultApplicationState,
   type ApplicationState,
 } from "./ApplicationState";
-import useReducer from "@/common/hooks/use-reducer/UseReducer";
+import { useReducer } from "@/features/common/hooks";
 import applicationReducer from "./ApplicationReducer";
 import type IAction from "./actions/IAction";
 

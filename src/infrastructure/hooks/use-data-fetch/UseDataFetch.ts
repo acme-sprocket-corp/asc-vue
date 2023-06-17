@@ -1,10 +1,10 @@
 import { onMounted, type Ref } from "vue";
-import useState from "../use-state/UseState";
 import type { AxiosResponse } from "axios";
 import { useRouter } from "vue-router";
 import { StatusCodes } from "./StatusCodes";
 import { namedRoute } from "@/router/INamedRoute";
-import { ValueDefaults } from "@/common/utilities";
+import { ValueDefaults } from "@/features/common/utilities";
+import { useState } from "@/features/common/hooks";
 
 export default function useDataFetch<T>(
   defaultState: T,

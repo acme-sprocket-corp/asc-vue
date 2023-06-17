@@ -43,9 +43,14 @@
 </template>
 
 <script setup lang="ts">
-import { useAuthorization, useId, useState } from "@/common/hooks";
-import { BoxElement, ContainerElement, InputField } from "@/common/components";
-import { ValueDefaults, eventToString } from "@/common/utilities";
+import { useId, useState } from "@/features/common/hooks";
+import {
+  BoxElement,
+  ContainerElement,
+  InputField,
+} from "@/features/common/components";
+import { ValueDefaults, eventToString } from "@/features/common/utilities";
+import { useAuthorization } from "@/infrastructure/hooks";
 
 const { logIn } = useAuthorization();
 

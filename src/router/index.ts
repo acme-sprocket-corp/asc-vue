@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { homeRoutes } from "@/features/home/Home.routes";
 import sprocketRoutes from "@/features/sprockets/routes/Sprockets.routes";
-import { errorPageRoutes } from "@/common/components/error/ErrorPage.routes";
+import { errorPageRoutes } from "@/features/common/components/error/ErrorPage.routes";
 import UserLogin from "@/features/customers/logIn/UserLogin.vue";
 
 const router = createRouter({

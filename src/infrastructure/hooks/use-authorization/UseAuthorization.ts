@@ -3,18 +3,18 @@ import type { LogInRequest, LogOutRequest } from "@/data/Api";
 import apiClient from "@/data/ApiClient";
 import { logInAction, logOutAction } from "@/stores/actions";
 import { homeRoute } from "@/features/home/Home.routes";
-import { errorRoute } from "@/common/components/error/ErrorPage.routes";
+import { errorRoute } from "@/features/common/components/error/ErrorPage.routes";
 import jwtDecode from "jwt-decode";
 import type AccessTokenPayload from "@/data/AccessTokenPayload";
-import { ValueDefaults } from "@/common/utilities";
+import { ValueDefaults } from "@/features/common/utilities";
 import type { AuthorizationReturn } from "./IUseAuthorization";
 import { useApplicationStore } from "@/stores/UseApplicationStore";
 import {
   useLocalStorage,
-  useState,
   StatusCodes,
   type IUseAuthorization,
-} from "@/common/hooks";
+} from "@/infrastructure/hooks";
+import { useState } from "@/features/common/hooks";
 
 export default function useAuthorization(): IUseAuthorization {
   const router = useRouter();
