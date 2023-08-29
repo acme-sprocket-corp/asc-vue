@@ -8,7 +8,7 @@ import { useState } from "@/features/common/hooks";
 
 export default function useDataFetch<T>(
   defaultState: T,
-  callback: () => Promise<AxiosResponse<T>>
+  callback: () => Promise<AxiosResponse<T>>,
 ): [state: Ref<T>, error: Ref<string>, loading: Ref<boolean>] {
   const [state, setState] = useState<T>(defaultState);
   const [error, setError] = useState<string>(ValueDefaults.String);

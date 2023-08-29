@@ -5,7 +5,7 @@ import type { Component } from "vue";
 export default function createIdRoute(
   basePath: string,
   name: string,
-  component: Component
+  component: Component,
 ): RouteRecordRaw {
   if (!basePath.startsWith("/") || !basePath.endsWith("/")) {
     throw new Error("The base path must stand and end with a '/'");

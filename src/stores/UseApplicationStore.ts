@@ -10,7 +10,7 @@ import type IAction from "./actions/IAction";
 export const useApplicationStore = defineStore("applicationStore", () => {
   const [state, dispatcher] = useReducer<ApplicationState, IAction>(
     applicationReducer,
-    defaultApplicationState
+    defaultApplicationState,
   );
 
   return { state, dispatcher };

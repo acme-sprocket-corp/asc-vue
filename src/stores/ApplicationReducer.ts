@@ -8,7 +8,7 @@ import {
 
 export default function applicationReducer(
   state: ApplicationState,
-  action: IAction
+  action: IAction,
 ): ApplicationState {
   switch (action.type) {
     case ApplicationAction.LogIn: {

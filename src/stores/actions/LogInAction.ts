@@ -8,7 +8,7 @@ export interface LogInPayload {
 
 export function logInAction(
   user: string,
-  accessToken: string
+  accessToken: string,
 ): IPayloadAction<LogInPayload> {
   return {
     type: ApplicationAction.LogIn,

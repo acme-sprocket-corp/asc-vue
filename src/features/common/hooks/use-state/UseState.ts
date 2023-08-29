@@ -1,7 +1,7 @@
 import { ref, type Ref } from "vue";
 
 export default function useState<T>(
-  defaultState: T
+  defaultState: T,
 ): [Ref<T>, (newState: T) => void] {
   const state = ref<T>(defaultState) as Ref<T>;
 

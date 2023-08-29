@@ -6,7 +6,7 @@ import {
 
 export default function namedIdParametersRoute(
   name: string,
-  id: Guid
+  id: Guid,
 ): INamedParametersRoute {
   return namedParametersRoute(name, { id: id.toString() });
 }

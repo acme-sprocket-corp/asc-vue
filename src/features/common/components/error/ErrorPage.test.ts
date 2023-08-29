@@ -6,7 +6,7 @@ describe("errorPage", () => {
     render(ErrorPage);
 
     expect(
-      screen.getByText(/sorry, something bad happened/i)
+      screen.getByText(/sorry, something bad happened/i),
     ).toBeInTheDocument();
   });
 });

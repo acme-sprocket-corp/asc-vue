@@ -68,7 +68,7 @@ const properties = defineProps<PaginatedTableProperties>();
 const pageSizeId = Math.random().toString();
 
 const pageCount = computed<number>(() =>
-  Math.ceil(properties.entityCount / properties.pageSize)
+  Math.ceil(properties.entityCount / properties.pageSize),
 );
 
 const pageIsActive = (pageIndex: number): string => {
@@ -80,7 +80,7 @@ const pageIsActive = (pageIndex: number): string => {
 
 const handlePageSizeChange = (event: Event): void => {
   const newPageSize = Number.parseInt(
-    (event.target as HTMLSelectElement).value
+    (event.target as HTMLSelectElement).value,
   );
 
   properties.pageSizeChange(newPageSize);

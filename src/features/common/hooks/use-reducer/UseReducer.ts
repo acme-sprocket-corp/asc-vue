@@ -3,7 +3,7 @@ import useState from "../use-state/UseState";
 
 export default function useReducer<T, K>(
   reducer: (currentState: T, action: K) => T,
-  defaultState: T
+  defaultState: T,
 ): [Ref<T>, (action: K) => void] {
   const [state, setState] = useState<T>(defaultState);
 

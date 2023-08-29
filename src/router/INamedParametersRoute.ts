@@ -7,7 +7,7 @@ export interface INamedParametersRoute extends INamedRoute {
 
 export function namedParametersRoute(
   name: string,
-  parameters: RouteParamsRaw
+  parameters: RouteParamsRaw,
 ): INamedParametersRoute {
   return {
     name,

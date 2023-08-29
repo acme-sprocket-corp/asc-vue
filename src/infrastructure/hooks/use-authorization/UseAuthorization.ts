@@ -24,7 +24,7 @@ export default function useAuthorization(): IUseAuthorization {
 
   const logIn = async (
     userName: string,
-    password: string
+    password: string,
   ): Promise<AuthorizationReturn> => {
     const request: LogInRequest = { userName, password };
 
@@ -33,13 +33,13 @@ export default function useAuthorization(): IUseAuthorization {
       .then((response) => {
         if (response.status === StatusCodes.Success.valueOf()) {
           const payload = jwtDecode<AccessTokenPayload>(
-            response.data.accessToken
+            response.data.accessToken,
           );
 
           localStorage.saveRefreshToken(response.data.refreshToken);
 
           store.dispatcher(
-            logInAction(payload.UserName, response.data.accessToken)
+            logInAction(payload.UserName, response.data.accessToken),
           );
 
           return router.push(homeRoute);

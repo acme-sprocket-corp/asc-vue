@@ -3,7 +3,7 @@ import type IEntityIdProperties from "./IEntityIdProperties";
 import { Guid } from "js-guid";
 
 export default function routeToId(
-  route: RouteLocationNormalized
+  route: RouteLocationNormalized,
 ): IEntityIdProperties {
   return {
     id: new Guid(route.params.id as string),

@@ -40,5 +40,5 @@ export default mergeConfig(
         "@storybook/jest": "vitest",
       },
     },
-  })
+  }),
 );

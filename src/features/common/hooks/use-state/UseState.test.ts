@@ -19,7 +19,7 @@ describe("useState", () => {
     await user.keyboard("newState");
 
     await expect(screen.findByLabelText("label")).resolves.toHaveValue(
-      "newState"
+      "newState",
     );
   });
 });
